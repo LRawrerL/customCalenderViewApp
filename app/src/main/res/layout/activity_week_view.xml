@@ -4,23 +4,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".WeekViewActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
-
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:background="@null"
-            android:onClick="weeklyAction"
-            android:text="Weekly"
-            android:textColor="@color/black"
-            android:textSize="20sp"
-            android:textStyle="bold" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -34,7 +23,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:background="@null"
-                android:onClick="previousMonthAction"
+                android:onClick="previousWeekAction"
                 android:text="@string/back"
                 android:textColor="@color/black"
                 android:textSize="20sp"
@@ -54,7 +43,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:background="@null"
-                android:onClick="nextMonthAction"
+                android:onClick="nextWeekAction"
                 android:text="@string/forward"
                 android:textColor="@color/black"
                 android:textSize="20sp"
@@ -129,8 +118,25 @@
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/calendarRV"
             android:layout_width="match_parent"
-            android:layout_height="260dp" />
+            android:layout_height="0dp"
+            android:layout_weight="1"/>
 
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@null"
+            android:onClick="newEventAction"
+            android:text="New Event"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <ListView
+            android:id="@+id/eventListView"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="5"/>
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
